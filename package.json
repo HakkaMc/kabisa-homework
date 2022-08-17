@@ -1,0 +1,94 @@
+{
+  "name": "kabisa-homework",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "clean": "find . | grep /node_modules$ | grep -v /node_modules/ | xargs rm -fR",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx . --cache --ignore-path .gitignore",
+    "lint:fix": "yarn prettier --write './**/*.json' && yarn lint --fix",
+    "newclean": "find . | grep /node_modules$ | grep -v /node_modules/ | xargs rm -fR \\; &&  yarn cache clean && yarn",
+    "start": "react-scripts start",
+    "style": "stylelint \"./src/**/*.{css,scss,less}\" --cache",
+    "style:fix": "yarn style --fix",
+    "test": "react-scripts test"
+  },
+  "lint-staged": {
+    "**/*.{css,scss,less}": "yarn style:fix",
+    "**/*.{js,jsx,ts,tsx}": "yarn lint:fix",
+    "**/*.{json,md,html}": "prettier --write",
+    "**/package.json": "sort-package-json"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intl": "^6.0.5",
+    "web-vitals": "^2.1.4",
+    "@mui/material": "^5.10.0",
+    "@mui/base": "^5.0.0-alpha.92",
+    "@mui/system": "^5.10.0",
+    "@mui/icons-material": "^5.8.4",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@reduxjs/toolkit": "^1.8.4",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "lodash": "^4.17.21",
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.48",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/lodash": "^4.14.183",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.54.4",
+    "sort-package-json": "^1.57.0",
+    "stylelint": "^14.10.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=16.7.0",
+    "yarn": ">=1.22.4"
+  }
+}
